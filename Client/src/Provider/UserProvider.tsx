@@ -1,5 +1,5 @@
-import React, { createContext, useState } from 'react'
-import  {IComment,IQuiz,IUser} from "../Interface/Interfaces"
+import React, {  useState } from 'react'
+import  {IUser} from "../Interface/Interfaces"
 
 export interface Props {
     children : React.ReactNode
