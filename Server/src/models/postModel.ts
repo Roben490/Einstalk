@@ -51,4 +51,4 @@ const PostSchema = new Schema<IPost>({
 },{timestamps:true})
 PostSchema.index({author:1})
 CommentSchema.index({author:1})
-export default mongoose.model<IPost>("Post", PostSchema);
+export default mongoose.model<IPost>("PostPuzzle", PostSchema);
