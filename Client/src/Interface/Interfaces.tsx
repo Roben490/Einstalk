@@ -10,7 +10,7 @@ export interface IComment {
     author : IUser[]
 }
 
-export interface IQuiz {
+export interface IPuzzels {
     title : string,
     content : string,
     author : IUser[],
