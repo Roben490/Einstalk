@@ -1,7 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
-import { loginUser, logoutUser, registerUser } from "../services/authService";
-import { genarateToken } from "../utils/JWT";
-import { authMiddleware } from "../middleware/authMiddleware";
+import { loginUser, logoutUser, registerUser } from "../src/services/authService";
+import { genarateToken } from "../src/utils/JWT";
+import { authMiddleware } from "../src/middleware/authMiddleware";
 
 const router = express.Router();
 
