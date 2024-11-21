@@ -3,7 +3,7 @@ import cors from "cors"
 import "dotenv/config";
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
-import router from "./Controller/authController";
+import router from "../Server/src/router/router";
 
 const app : Express = express()
 
