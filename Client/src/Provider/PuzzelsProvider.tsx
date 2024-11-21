@@ -2,7 +2,7 @@ import React, { SetStateAction, useState } from "react";
 import { IPuzzels } from "../Interface/Interfaces";
 
 export interface Props {
-  childen: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export interface PuzzelProps {
@@ -15,12 +15,12 @@ export const PuzzelContext = React.createContext<PuzzelProps>({
   setPuzzels: () => {},
 });
 
-const PuzzelsProvider = ({ childen }: Props) => {
+const PuzzelsProvider = ({ children }: Props) => {
   const [puzzels, setPuzzels] = useState<IPuzzels[]>([]);
   return (
     <div>
       <PuzzelContext.Provider value={{ puzzels, setPuzzels }}>
-        {childen}
+        {children}
       </PuzzelContext.Provider>
     </div>
   );
