@@ -143,6 +143,10 @@ footer {
   width: 99%;
   font-size: 0.9em;
 }
+.nav{
+  font-size: 25px;
+  color: rgb(58, 47, 10);
+}
 
 .form-container {
   background-color: #fff;
