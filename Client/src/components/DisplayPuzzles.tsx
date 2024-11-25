@@ -19,7 +19,7 @@ export default function DisplayPuzzles({ puzzles }: Props) {
               <h3>{puzzle.title}</h3>
               <p>{puzzle._id}</p>
               <p>Content: {puzzle.content}</p>
-              <p>Author: {puzzle.author}</p>
+              <p>Author: {puzzle.author?.username}</p>
               <div> הוסף תגובה💬</div>
               <div> לכל התגובות💬</div>
             </div>
