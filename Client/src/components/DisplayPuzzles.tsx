@@ -2,26 +2,24 @@ import  { IPuzzels } from "../Interface/Interfaces";
 import useFatch from '../Hooks/useFetch'
 import { useContext, useEffect, useState } from "react";
 import { PuzzelContext } from "../Provider/PuzzelsProvider";
-const url = "http://localhost:3040/user/username"
+const url = "http://localhost:3040/post"
 
 interface Props {
   puzzles: IPuzzels[];
 }
 
 export default function DisplayPuzzles({ puzzles }: Props) {
-  const {puzzels} = useContext(PuzzelContext)
-  if(puzzels){
-
   return (
     <>
       <div className="card-list">
-        {puzzles.map((puzzle) => (
-          <div key={puzzle._id} className="card">
+        {puzzles.map((puzzle, index) => (
+          <div key={index} className="card">
             <div>
+              <img src={puzzle.img} alt={puzzle.title} className="image-card"/>
               <h3>{puzzle.title}</h3>
               <p>{puzzle._id}</p>
               <p>Content: {puzzle.content}</p>
-              <p>Author: {puzzle.author?.username}</p>
+              <p>Author: {puzzle.author}</p>
               <div> הוסף תגובה💬</div>
               <div> לכל התגובות💬</div>
             </div>
@@ -48,5 +46,3 @@ export default function DisplayPuzzles({ puzzles }: Props) {
     </>
   );
 }
-}
-

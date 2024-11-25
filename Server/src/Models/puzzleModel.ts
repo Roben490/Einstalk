@@ -3,11 +3,12 @@ import { IUser } from "./userModel";
 
 export interface IComment {
   content: string;
-  author: IUser['_id'];
+  author: IUser["_id"];
 }
 
 export interface IPuzzele extends Document {
   title: string;
+  img: string;
   content: string;
   author: IUser["_id"];
   comments: IComment[];
@@ -22,7 +23,7 @@ export const CommentSchema = new Schema<IComment>(
     },
     author: {
       type: Schema.Types.ObjectId,
-      ref: "User",
+      ref: "UserPuzzle",
     },
   },
   { timestamps: true }
