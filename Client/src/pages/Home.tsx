@@ -1,8 +1,7 @@
 import { useContext } from 'react'
 import DisplayPuzzles from '../components/DisplayPuzzles'
 import { PuzzelContext } from '../Provider/PuzzelsProvider'
-import PageHeader from './PageHeader'
-import useFatch from '../Hooks/useFetch'
+
 import { Link } from 'react-router-dom'
 
 
