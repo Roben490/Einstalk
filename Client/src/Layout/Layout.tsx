@@ -1,26 +1,20 @@
-import Footer from "../Layout/Footer/Footer"
-import Header from "./Header/Header"
-import Main from "./Main/Main"
+import Footer from "../Layout/Footer/Footer";
+import Header from "./Header/Header";
+import Main from "./Main/Main";
 // import Users from "./Main/User/Users"
 
 interface Props {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
-const Layout = ({children} : Props) => {
-  // const [name, setname] = useState("Nimrod")
-  // const [user, setuser] = useState([])
-
-  
-
+const Layout = ({ children }: Props) => {
   return (
     <div className="app-container">
-    <Header/>
-    <Main children={children}   />
-    <Footer/>
-      
+      <Header />
+      <Main children={children} />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

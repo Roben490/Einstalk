@@ -11,6 +11,7 @@ import LoginPage from "../pages/LoginPage";
 import DialogComp from "../components/dialog-comp/DialogComp";
 import { useContext, useEffect } from "react";
 import { BooleanProps, isKeyPressContext } from "../Provider/CookieProvider";
+import About from "../pages/About/About";
 
 export default function AppRoute() {
   const isAuth = useContext<BooleanProps>(isKeyPressContext);
@@ -24,6 +25,7 @@ export default function AppRoute() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
+        <Route path="/about" element={<About />}></Route>
         <Route path="/" element={<Home />}></Route>
         <Route path="/welcome" element={<Welcome />}></Route>
         <Route path="/puzzle/:id" element={<Puzzle />}></Route>
