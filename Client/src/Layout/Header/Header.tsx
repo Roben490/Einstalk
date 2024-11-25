@@ -27,6 +27,7 @@ const Header = () => {
         }}
         >{userContext?.user ? 'logout': 'login'}</button>
         <button><Link to={"/addNewUser"}></Link>register</button>
+        <button onClick={()=>navigate('/')} className="back-button">Back to Home</button>
         </div>
         
 
