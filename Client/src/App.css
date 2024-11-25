@@ -4,6 +4,11 @@
   padding: 3px;
 
 }
+.big-div{
+  min-width: 90%;
+
+
+}
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -65,6 +70,7 @@ header {
   text-align: center;
   font-size: 1.2em;
   font-weight: 600;
+  min-width: 800px;
   justify-content: space-around;
 }
 
@@ -85,6 +91,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  min-width: 90%;
   width: 100%;
   justify-content: space-evenly;
   padding-bottom: 20px;
@@ -98,6 +105,10 @@ main {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   font-family: 'Poppins', sans-serif;
+}
+.nav{
+  font-size: 27px;
+  color: #2b2006;
 }
 
 .card h3 {
