@@ -1,8 +1,7 @@
-import  { IPuzzels } from "../Interface/Interfaces";
-import useFatch from '../Hooks/useFetch'
-import { useContext, useEffect, useState } from "react";
-import { PuzzelContext } from "../Provider/PuzzelsProvider";
-const url = "http://localhost:3040/post"
+import { Link } from "react-router-dom";
+import { IPuzzels } from "../Interface/Interfaces";
+import PuzzleComponent from "./PuzzleComponent";
+import PageHeader from "../pages/PageHeader";
 
 interface Props {
   puzzles: IPuzzels[];
@@ -11,6 +10,7 @@ interface Props {
 export default function DisplayPuzzles({ puzzles }: Props) {
   return (
     <>
+    
       <div className="card-list">
         {puzzles.map((puzzle, index) => (
           <div key={index} className="card">
@@ -19,26 +19,8 @@ export default function DisplayPuzzles({ puzzles }: Props) {
               <h3>{puzzle.title}</h3>
               <p>{puzzle._id}</p>
               <p>Content: {puzzle.content}</p>
-              <p>Author: {puzzle.author?.username}</p>
-              <div> הוסף תגובה💬</div>
-              <div> לכל התגובות💬</div>
-            </div>
-            
-            <div>
-              
-              <h4>Comments:</h4>
-              {puzzle.comments.length > 0 ? (
-                <ul>
-                  {puzzle.comments.map((comment, idx) => (
-                    <li key={idx}>
-                      <p>Comment: {comment.content}</p>
-                      <p>Author: {comment.author}</p>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p>No comments</p>
-              )}
+              <p>Author: {puzzle.author}</p>
+              <Link to={`/Puzzle/${puzzle._id}`}>Open The Puzzle</Link>
             </div>
           </div>
         ))}
