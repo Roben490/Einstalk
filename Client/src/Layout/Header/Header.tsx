@@ -4,25 +4,7 @@ const Header = () => {
   return (
     <>
       <header>
-        <h1>Puzzles app</h1>
-        {userContext?.user && <ProfileComp />}
-        <div className="login_register">
-          <button
-            onClick={async () => {
-              if (userContext?.user) {
-                await getFatch();
-                userContext.setUser(null);
-              } else {
-                navigate("/login");
-              }
-            }}
-          >
-            {userContext?.user ? "logout" : "login"}
-          </button>
-          <button>
-            <Link to={"/addNewUser"}></Link>register
-          </button>
-        </div>
+        <h3>Puzzels app</h3>
 
         <div className="navlink">
           <NavLink to={"/Welcome"}>Welcome</NavLink>
