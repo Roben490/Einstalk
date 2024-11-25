@@ -43,7 +43,7 @@ const PuzzeleSchema = new Schema<IPuzzele>({
   },
   author:{
     type: Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'UserPuzzle'
   },
   comments:{
     type: [CommentSchema]

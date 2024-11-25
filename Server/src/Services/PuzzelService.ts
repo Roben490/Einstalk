@@ -3,7 +3,9 @@ import User, { IUser } from "../Models/userModel";
 
 const getPuzzele = async () => {
   try {
-    const puzzeles = await Puzzele.find();
+    const puzzeles = await Puzzele.find()
+    .select('title content comments')
+    .populate('author','username -_id');
     console.log(puzzeles);
 
     if (!puzzeles) return "cant find posts";
@@ -34,7 +36,8 @@ const getPuzzelesByAuthor = async (author:string) =>{
 const getOnePuzzele = async (_id: string) => {
   try {
     console.log(_id);
-    const puzzele = await Puzzele.findById(_id);
+    const puzzele = await Puzzele.findById(_id)
+    .populate('author', 'username -_id');
     console.log(puzzele);
     if (!puzzele) return "the post is not found";
     return puzzele;

@@ -9,11 +9,10 @@ router.post("/login", async (req: Request, res: Response): Promise<void> => {
   try {
     const { username, password } = req.body;    
     const userMan = await loginUser(username, password);
-    
-    //V    
+     
     if (userMan) {
       const token = genarateToken(userMan._id as string);
-      res.cookie("auth_token", token, {
+      res.cookie("token", token, {
         httpOnly: true,
         secure: false,
         maxAge: 1000 * 60 * 60,

@@ -14,6 +14,7 @@ export interface PuzzelProps {
   setPuzzels: React.Dispatch<SetStateAction<IPuzzels[]>>;
 }
 
+
 export const PuzzelContext = React.createContext<PuzzelProps>({
   puzzels: [],
   setPuzzels: () => {},
@@ -24,10 +25,11 @@ const PuzzelsProvider = ({ children }: Props) => {
   const {getFatch,data} = useFatch<IPuzzels[]>(url)
   useEffect(()=>{
     getFatch()
-
   },[])
 
   useEffect(() => {
+    console.log(data);
+    
     if (data) return setPuzzels(data);
     console.log("no results");
   }, [data]);

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import Stiles from'./login.module.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import useFatch from '../../Hooks/useFetch'
 import { BooleanProps, isKeyPressContext } from '../../Provider/CookieProvider'
 import { UserConntext, UserProps } from '../../Provider/UserProvider'
@@ -13,6 +13,7 @@ const LoginComp = () => {
     const { postFetch} = useFatch<UserProps[]>('http://localhost:3040/auth/login')
     const isAuth = useContext<BooleanProps>(isKeyPressContext)
     const userConntext = useContext<UserProps| null>(UserConntext)
+    const navigate = useNavigate()
     
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault(); // Prevent page reload
@@ -21,7 +22,7 @@ const LoginComp = () => {
               const res = await postFetch({username,password})
               userConntext?.setUser(res.userMan)
               console.log(userConntext?.user);
-              
+              navigate('/')
             }catch (error: any) {
                 console.error("Login failed:", error);
             }

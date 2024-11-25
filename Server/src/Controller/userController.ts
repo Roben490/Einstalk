@@ -5,8 +5,10 @@ const router = express.Router();
 
 router.post("/mypussles", async (req: Request, res: Response): Promise<void> =>{
     try {
-        // const puzzles = await getPuzzelesByAuthor()
+        const {author} = req.body
+        const puzzles = await getPuzzelesByAuthor(author)
     } catch (error) {
         
     }
 })
+export default router;
